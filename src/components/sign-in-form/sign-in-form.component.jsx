@@ -26,6 +26,7 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
+    //setCurrentUser(user);
     await createUserDocumentFromAuth(user);
   };
 
@@ -34,7 +35,7 @@ const SignInForm = () => {
 
     try {
       const { user } = await sinInAuthUserWithEmailAndPassword(email, password);
-      setCurrentUser(user);
+      //setCurrentUser(user);
 
       resetFormFields();
       // Redirect to login page here if needed
